@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dsm116rod4ntr"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_gbhq5"]
+[ext_resource type="Script" path="res://card.gd" id="2_a3636"]
+[ext_resource type="Texture2D" uid="uid://c1pcd4m2hfomi" path="res://cards/rations.png" id="2_kd8kh"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_gbhq5")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_gbhq5")
+name = "food"
+value = 4
+
+[resource]
+script = ExtResource("2_a3636")
+title = "Rations Shared"
+description = "Being cooperative lightens the mood!"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_gbhq5")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_gbhq5")]([SubResource("Resource_jw4fg")])
+special_effect = "survival_deck"
+special_desc = "+1  food for each survival card in discard pile, -1 food for each fight card in discard pile"
+image = ExtResource("2_kd8kh")
+removes_self = false

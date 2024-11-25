@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://btkdmv0f7aff6"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_se62o"]
+[ext_resource type="Texture2D" uid="uid://dtsauyp56py1n" path="res://rum.png" id="2_bopio"]
+[ext_resource type="Script" path="res://card.gd" id="3_82bm3"]
+
+[sub_resource type="Resource" id="Resource_4g0ev"]
+script = ExtResource("1_se62o")
+name = "morale"
+value = -1
+
+[sub_resource type="Resource" id="Resource_hspa5"]
+script = ExtResource("1_se62o")
+name = "morale"
+value = 5
+
+[resource]
+script = ExtResource("3_82bm3")
+title = "Fancy Rum"
+description = "Helps you forget, but with style"
+type = "Special"
+good_effect_params = Array[ExtResource("1_se62o")]([SubResource("Resource_hspa5")])
+bad_effect_params = Array[ExtResource("1_se62o")]([SubResource("Resource_4g0ev")])
+special_effect = "remove_card"
+special_desc = "Remove a card from your discard pile, if nothing in discard pile, it'll remove itself"
+image = ExtResource("2_bopio")

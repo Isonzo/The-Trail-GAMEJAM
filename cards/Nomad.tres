@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://djpkn2v8ou13l"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_vx7u2"]
+[ext_resource type="Script" path="res://card.gd" id="2_8svfo"]
+[ext_resource type="Texture2D" uid="uid://dho05msdmy88j" path="res://cards/nomad.png" id="2_das57"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_vx7u2")
+name = "card"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_vx7u2")
+name = "food"
+value = 2
+
+[resource]
+script = ExtResource("2_8svfo")
+title = "Nomad's Blessing"
+description = "He who lives by the gun, dies by the gun"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_vx7u2")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_vx7u2")]([SubResource("Resource_jw4fg")])
+special_effect = "nomad"
+special_desc = "If either your draw pile or discard pile have no fight cards, +1 speed"
+image = ExtResource("2_das57")
+removes_self = false

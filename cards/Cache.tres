@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dgakuu7k77emp"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_86ig3"]
+[ext_resource type="Texture2D" uid="uid://d0ao6a57c2e21" path="res://cards/cache.png" id="2_hxj18"]
+[ext_resource type="Script" path="res://card.gd" id="2_xw066"]
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_86ig3")
+name = "ammo"
+value = 2
+
+[sub_resource type="Resource" id="Resource_aqnh5"]
+script = ExtResource("1_86ig3")
+name = "food"
+value = 4
+
+[resource]
+script = ExtResource("2_xw066")
+title = "Hidden Cache"
+description = "You find an abandoned building, maybe there's supplies in there if you look!"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_86ig3")]([SubResource("Resource_28xcc"), SubResource("Resource_aqnh5")])
+bad_effect_params = Array[ExtResource("1_86ig3")]([])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_hxj18")
+removes_self = false

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://ddg2v8tnp0n4a"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_aw0ab"]
+[ext_resource type="Script" path="res://card.gd" id="2_8t73b"]
+[ext_resource type="Texture2D" uid="uid://7e5qeovg61kh" path="res://cards/beast.png" id="2_yho7d"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_aw0ab")
+name = "ammo"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_aw0ab")
+name = "food"
+value = 4
+
+[sub_resource type="Resource" id="Resource_1edch"]
+script = ExtResource("1_aw0ab")
+name = "ammo"
+value = -1
+
+[resource]
+script = ExtResource("2_8t73b")
+title = "Wild Beast"
+description = "A wild beast approaches! Might be a good opportunity to get foot..."
+type = "Fight"
+good_effect_params = Array[ExtResource("1_aw0ab")]([SubResource("Resource_28xcc"), SubResource("Resource_1edch")])
+bad_effect_params = Array[ExtResource("1_aw0ab")]([SubResource("Resource_jw4fg")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_yho7d")
+removes_self = false

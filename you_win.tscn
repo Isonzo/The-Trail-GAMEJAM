@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl375hrqs0ae1"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_xjlnq"]
+[ext_resource type="FontFile" uid="uid://nntnisgwljuf" path="res://Vanilla Whale.otf" id="2_fsidb"]
+
+[node name="YouWin" type="Node"]
+script = ExtResource("1_xjlnq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.981036, 0.782481, 0.612977, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 318.0
+offset_right = 1044.0
+offset_bottom = 463.0
+theme_override_colors/font_color = Color(0.564706, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fsidb")
+theme_override_font_sizes/font_size = 120
+text = "YOU WIN"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

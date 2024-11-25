@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b6yyxp3uq28ge"]
+
+[ext_resource type="FontFile" uid="uid://bi4gan4ipqlma" path="res://kirsty bd.otf" id="1_hpbh7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8y535"]
+bg_color = Color(0.787343, 0.536576, 0.331802, 1)
+
+[resource]
+default_font = ExtResource("1_hpbh7")
+default_font_size = 24
+Label/colors/font_color = Color(0.252091, 0.137836, 0.0312419, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_8y535")

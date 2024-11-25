@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Card" load_steps=9 format=3 uid="uid://ih45fqj4yxjw"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_pmplw"]
+[ext_resource type="Script" path="res://card.gd" id="2_d0efw"]
+[ext_resource type="Texture2D" uid="uid://dow4auwia0vjh" path="res://cards/bandit.png" id="2_d4s7p"]
+
+[sub_resource type="Resource" id="Resource_hgolv"]
+script = ExtResource("1_pmplw")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_oho57"]
+script = ExtResource("1_pmplw")
+name = "wealth"
+value = -5
+
+[sub_resource type="Resource" id="Resource_3vci7"]
+script = ExtResource("1_pmplw")
+name = "ammo"
+value = -3
+
+[sub_resource type="Resource" id="Resource_0cosn"]
+script = ExtResource("1_pmplw")
+name = "wealth"
+value = 2
+
+[sub_resource type="Resource" id="Resource_7m8iv"]
+script = ExtResource("1_pmplw")
+name = "morale"
+value = 1
+
+[resource]
+script = ExtResource("2_d0efw")
+title = "Bandit Raid"
+description = "I hope you're armed..."
+type = "Fight"
+good_effect_params = Array[ExtResource("1_pmplw")]([SubResource("Resource_3vci7"), SubResource("Resource_0cosn"), SubResource("Resource_7m8iv")])
+bad_effect_params = Array[ExtResource("1_pmplw")]([SubResource("Resource_hgolv"), SubResource("Resource_oho57")])
+special_effect = "ammo_check"
+special_desc = "If you have more than 5 ammo, morale increase by 4 instead"
+image = ExtResource("2_d4s7p")
+removes_self = false

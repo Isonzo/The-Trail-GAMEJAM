@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://d1it2fb37o0wb"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_s7im2"]
+[ext_resource type="Texture2D" uid="uid://b821m3vtg5u53" path="res://cards/hunter.png" id="2_8i6m0"]
+[ext_resource type="Script" path="res://card.gd" id="2_d57t8"]
+
+[sub_resource type="Resource" id="Resource_kfg2g"]
+script = ExtResource("1_s7im2")
+name = "ammo"
+value = -2
+
+[sub_resource type="Resource" id="Resource_3ytko"]
+script = ExtResource("1_s7im2")
+name = "morale"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_s7im2")
+name = "ammo"
+value = -1
+
+[resource]
+script = ExtResource("2_d57t8")
+title = "Master Hunter"
+description = "All that survival training finally pays off"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_s7im2")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_s7im2")]([SubResource("Resource_kfg2g"), SubResource("Resource_3ytko")])
+special_effect = "food_per_survival_discard"
+special_desc = "Gain food for each Survival card in your discard"
+image = ExtResource("2_8i6m0")
+removes_self = false

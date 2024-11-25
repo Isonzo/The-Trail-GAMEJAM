@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Card" load_steps=8 format=3 uid="uid://dvh1r86op4lri"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_6a084"]
+[ext_resource type="Script" path="res://card.gd" id="2_0jxse"]
+[ext_resource type="Texture2D" uid="uid://bwh62c7rt0u13" path="res://cards/stash.png" id="2_2385p"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_6a084")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_mwm1u"]
+script = ExtResource("1_6a084")
+name = "card"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_6a084")
+name = "card"
+value = 1
+
+[sub_resource type="Resource" id="Resource_aqnh5"]
+script = ExtResource("1_6a084")
+name = "food"
+value = 4
+
+[resource]
+script = ExtResource("2_0jxse")
+title = "Secret Stash"
+description = "For a rainy day, Don't let it get stolen!"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_6a084")]([SubResource("Resource_28xcc"), SubResource("Resource_aqnh5")])
+bad_effect_params = Array[ExtResource("1_6a084")]([SubResource("Resource_jw4fg"), SubResource("Resource_mwm1u")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_2385p")
+removes_self = false

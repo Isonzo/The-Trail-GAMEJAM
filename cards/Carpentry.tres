@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://d1gvcwvxj23yt"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_bgw5l"]
+[ext_resource type="Texture2D" uid="uid://bkboihc7ri3fh" path="res://cards/carpentry.png" id="2_gfoh7"]
+[ext_resource type="Script" path="res://card.gd" id="2_nx7kk"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_bgw5l")
+name = "food"
+value = 2
+
+[sub_resource type="Resource" id="Resource_akdbu"]
+script = ExtResource("1_bgw5l")
+name = "morale"
+value = 1
+
+[resource]
+script = ExtResource("2_nx7kk")
+title = "Carpentry"
+description = "If you need it, you can make it."
+type = "Survival"
+good_effect_params = Array[ExtResource("1_bgw5l")]([SubResource("Resource_akdbu")])
+bad_effect_params = Array[ExtResource("1_bgw5l")]([SubResource("Resource_jw4fg")])
+special_effect = "carpentry"
+special_desc = "Saw the other card in half, and make two new cards, put on top of the draw pile"
+image = ExtResource("2_gfoh7")
+removes_self = false

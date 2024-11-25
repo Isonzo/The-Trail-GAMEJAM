@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://c03fuck2okx4i"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_25ylu"]
+[ext_resource type="Script" path="res://card.gd" id="2_2kdvv"]
+[ext_resource type="Texture2D" uid="uid://cmtyppigq1jxj" path="res://cards/sacrifice.png" id="2_6yphp"]
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_25ylu")
+name = "ammo"
+value = -1
+
+[sub_resource type="Resource" id="Resource_5bqta"]
+script = ExtResource("1_25ylu")
+name = "morale"
+value = -1
+
+[resource]
+script = ExtResource("2_2kdvv")
+title = "Sacrifice"
+description = "One step closer to purity"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_25ylu")]([SubResource("Resource_28xcc"), SubResource("Resource_5bqta")])
+bad_effect_params = Array[ExtResource("1_25ylu")]([])
+special_effect = "exhaust_other_card"
+special_desc = "Remove other card in hand from your deck. If double cast, will remove itself."
+image = ExtResource("2_6yphp")
+removes_self = false

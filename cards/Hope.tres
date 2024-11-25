@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://28lnb3wh5k4x"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_gfjxr"]
+[ext_resource type="Script" path="res://card.gd" id="2_mr78s"]
+[ext_resource type="Texture2D" uid="uid://brooa85y87vul" path="res://cards/Hope.png" id="2_scvoe"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_gfjxr")
+name = "morale"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_gfjxr")
+name = "morale"
+value = 2
+
+[sub_resource type="Resource" id="Resource_aqnh5"]
+script = ExtResource("1_gfjxr")
+name = "wealth"
+value = -1
+
+[resource]
+script = ExtResource("2_mr78s")
+title = "Beacon of Hope"
+description = "Regain what has been lost"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_gfjxr")]([SubResource("Resource_28xcc"), SubResource("Resource_aqnh5")])
+bad_effect_params = Array[ExtResource("1_gfjxr")]([SubResource("Resource_jw4fg")])
+special_effect = "reshuffle_discard_pile"
+special_desc = "Reshuffles"
+image = ExtResource("2_scvoe")
+removes_self = false

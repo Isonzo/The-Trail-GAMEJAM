@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://bw2av3i3v3rtw"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_3dql5"]
+[ext_resource type="Texture2D" uid="uid://chxubxn1574jd" path="res://cards/hunker.png" id="2_mjxlb"]
+[ext_resource type="Script" path="res://card.gd" id="2_xbb8n"]
+
+[sub_resource type="Resource" id="Resource_eerhm"]
+script = ExtResource("1_3dql5")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_v3cqu"]
+script = ExtResource("1_3dql5")
+name = "ammo"
+value = -1
+
+[resource]
+script = ExtResource("2_xbb8n")
+title = "Hunker Down"
+description = "Fortifications to ensure your safety"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_3dql5")]([SubResource("Resource_eerhm"), SubResource("Resource_v3cqu")])
+bad_effect_params = Array[ExtResource("1_3dql5")]([])
+special_effect = "hunker_down"
+special_desc = "Restricts movement, but provides half of draw pile amount attack immunity"
+image = ExtResource("2_mjxlb")
+removes_self = false

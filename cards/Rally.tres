@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://ctuqdcjtxsmrn"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_ychxn"]
+[ext_resource type="Script" path="res://card.gd" id="2_ma6ja"]
+[ext_resource type="Texture2D" uid="uid://doo7437xh68ec" path="res://cards/rally.png" id="2_ob7fo"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_ychxn")
+name = "morale"
+value = -3
+
+[resource]
+script = ExtResource("2_ma6ja")
+title = "Rally"
+description = "Great adversary awaits, but you know no fear!"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_ychxn")]([])
+bad_effect_params = Array[ExtResource("1_ychxn")]([SubResource("Resource_jw4fg")])
+special_effect = "morale_per_fight"
+special_desc = "Gain morale for each Fight card in draw pile up to a max of 7"
+image = ExtResource("2_ob7fo")
+removes_self = false

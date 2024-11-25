@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://c6acgv2udli50"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_o6dgf"]
+[ext_resource type="Script" path="res://card.gd" id="2_1xlgn"]
+[ext_resource type="Texture2D" uid="uid://b2b5b7hhfncu0" path="res://cards/Abundance.png" id="2_dtyd2"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_o6dgf")
+name = "food"
+value = 1
+
+[sub_resource type="Resource" id="Resource_akdbu"]
+script = ExtResource("1_o6dgf")
+name = "morale"
+value = 1
+
+[resource]
+script = ExtResource("2_1xlgn")
+title = "Abundance"
+description = "There's plenty more where that came from!"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_o6dgf")]([SubResource("Resource_akdbu")])
+bad_effect_params = Array[ExtResource("1_o6dgf")]([SubResource("Resource_jw4fg")])
+special_effect = "multiplication"
+special_desc = "Next card you play is played twice"
+image = ExtResource("2_dtyd2")
+removes_self = true

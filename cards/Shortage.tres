@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://b7ieedb5sxk57"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_pfcbj"]
+[ext_resource type="Texture2D" uid="uid://dsumjn16ulpk6" path="res://cards/shortage.png" id="2_kegj6"]
+[ext_resource type="Script" path="res://card.gd" id="2_kqocl"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_pfcbj")
+name = "food"
+value = -4
+
+[sub_resource type="Resource" id="Resource_wsb1a"]
+script = ExtResource("1_pfcbj")
+name = "morale"
+value = -2
+
+[resource]
+script = ExtResource("2_kqocl")
+title = "Supply Shortage"
+description = "You may have miscounted or overused your supplies..."
+type = "Survival"
+good_effect_params = Array[ExtResource("1_pfcbj")]([])
+bad_effect_params = Array[ExtResource("1_pfcbj")]([SubResource("Resource_jw4fg"), SubResource("Resource_wsb1a")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_kegj6")
+removes_self = false

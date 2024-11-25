@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://uei2bni1682f"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_uvfp6"]
+[ext_resource type="Texture2D" uid="uid://uvgbehbd6sd5" path="res://cards/outlaw.png" id="2_2r3qb"]
+[ext_resource type="Script" path="res://card.gd" id="2_c7k6v"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_uvfp6")
+name = "ammo"
+value = -1
+
+[sub_resource type="Resource" id="Resource_so238"]
+script = ExtResource("1_uvfp6")
+name = "morale"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_uvfp6")
+name = "wealth"
+value = 5
+
+[resource]
+script = ExtResource("2_c7k6v")
+title = "Outlaw's Gambit"
+description = "Making enemies, are we?"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_uvfp6")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_uvfp6")]([SubResource("Resource_jw4fg"), SubResource("Resource_so238")])
+special_effect = "outlaw"
+special_desc = "Draw a Fight card"
+image = ExtResource("2_2r3qb")
+removes_self = false

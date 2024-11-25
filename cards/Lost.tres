@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://b0ydtjcy4d4j2"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_561xw"]
+[ext_resource type="Texture2D" uid="uid://wc1kry4viv28" path="res://cards/lost.png" id="2_23ans"]
+[ext_resource type="Script" path="res://card.gd" id="2_hyduc"]
+
+[sub_resource type="Resource" id="Resource_hgolv"]
+script = ExtResource("1_561xw")
+name = "morale"
+value = -2
+
+[sub_resource type="Resource" id="Resource_oho57"]
+script = ExtResource("1_561xw")
+name = "food"
+value = -2
+
+[resource]
+script = ExtResource("2_hyduc")
+title = "Wrong Way"
+description = "You took a wrong turn and lost precious time."
+type = "Survival"
+good_effect_params = Array[ExtResource("1_561xw")]([])
+bad_effect_params = Array[ExtResource("1_561xw")]([SubResource("Resource_hgolv"), SubResource("Resource_oho57")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_23ans")
+removes_self = false

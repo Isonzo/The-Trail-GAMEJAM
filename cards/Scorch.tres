@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://c40piqgatynkv"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_wqjox"]
+[ext_resource type="Texture2D" uid="uid://d5wrafpugsaf" path="res://cards/scorch.png" id="2_ulypp"]
+[ext_resource type="Script" path="res://card.gd" id="2_y2u2t"]
+
+[resource]
+script = ExtResource("2_y2u2t")
+title = "Scorched Earth"
+description = "From the ashes, something new can arise"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_wqjox")]([])
+bad_effect_params = Array[ExtResource("1_wqjox")]([])
+special_effect = "replace_discard"
+special_desc = "Removes discard pile and replaces it with an equal number of cards, and lose morale equal to number of cards replaced"
+image = ExtResource("2_ulypp")
+removes_self = true

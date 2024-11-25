@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dgv3pyvgpv1t8"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_cfsso"]
+[ext_resource type="Script" path="res://card.gd" id="2_5gkvp"]
+[ext_resource type="Texture2D" uid="uid://c3ttxmgwteue6" path="res://cards/caution.png" id="2_hj5gh"]
+
+[sub_resource type="Resource" id="Resource_punj0"]
+script = ExtResource("1_cfsso")
+name = "distance"
+value = -2
+
+[sub_resource type="Resource" id="Resource_021ev"]
+script = ExtResource("1_cfsso")
+name = "morale"
+value = 3
+
+[resource]
+script = ExtResource("2_5gkvp")
+title = "Cautious Advance"
+description = "Extra care taken in these parts"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_cfsso")]([SubResource("Resource_punj0"), SubResource("Resource_021ev")])
+bad_effect_params = Array[ExtResource("1_cfsso")]([])
+special_effect = "discard_from_draw"
+special_desc = "Discard a card in the draw pile"
+image = ExtResource("2_hj5gh")
+removes_self = false

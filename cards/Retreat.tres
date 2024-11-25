@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://ddpibbj60d6oj"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_plsp0"]
+[ext_resource type="Script" path="res://card.gd" id="2_4ulwe"]
+[ext_resource type="Texture2D" uid="uid://p1dpuuxv60km" path="res://cards/retreat.png" id="2_wvh5u"]
+
+[sub_resource type="Resource" id="Resource_punj0"]
+script = ExtResource("1_plsp0")
+name = "distance"
+value = -5
+
+[sub_resource type="Resource" id="Resource_nmoua"]
+script = ExtResource("1_plsp0")
+name = "ammo"
+value = -1
+
+[sub_resource type="Resource" id="Resource_021ev"]
+script = ExtResource("1_plsp0")
+name = "morale"
+value = 5
+
+[resource]
+script = ExtResource("2_4ulwe")
+title = "Tactical Retreat"
+description = "Not running away!"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_plsp0")]([SubResource("Resource_punj0"), SubResource("Resource_nmoua"), SubResource("Resource_021ev")])
+bad_effect_params = Array[ExtResource("1_plsp0")]([])
+special_effect = "redraw_from_discard"
+special_desc = "Redraw a card from the discard pile"
+image = ExtResource("2_wvh5u")
+removes_self = false

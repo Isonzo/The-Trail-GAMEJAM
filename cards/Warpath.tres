@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://cj2u5yne347r4"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_kltwq"]
+[ext_resource type="Script" path="res://card.gd" id="2_gx883"]
+[ext_resource type="Texture2D" uid="uid://b0utebon2oe5y" path="res://cards/warpath.png" id="2_rblg7"]
+
+[sub_resource type="Resource" id="Resource_wtjul"]
+script = ExtResource("1_kltwq")
+name = "wealth"
+value = -1
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_kltwq")
+name = "ammo"
+value = 2
+
+[resource]
+script = ExtResource("2_gx883")
+title = "Warpath"
+description = "I need a weapon"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_kltwq")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_kltwq")]([SubResource("Resource_wtjul")])
+special_effect = "double_ammo_gain"
+special_desc = "For the next 2 turns, double ammo gained"
+image = ExtResource("2_rblg7")
+removes_self = false

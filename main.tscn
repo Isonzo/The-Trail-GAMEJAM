@@ -1,0 +1,279 @@
+[gd_scene load_steps=14 format=3 uid="uid://cqlwccn1fxf7x"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0cwsq"]
+[ext_resource type="Texture2D" uid="uid://ehu51avvdx63" path="res://card_front.png" id="1_bieys"]
+[ext_resource type="Texture2D" uid="uid://b8sdrlmbtk62q" path="res://card_front_hover.png" id="2_22cfx"]
+[ext_resource type="FontFile" uid="uid://bi4gan4ipqlma" path="res://kirsty bd.otf" id="2_kh1re"]
+[ext_resource type="Theme" uid="uid://b6yyxp3uq28ge" path="res://theme.tres" id="2_kyc02"]
+[ext_resource type="Texture2D" uid="uid://crbfb1y213oj5" path="res://gun.png" id="3_wadif"]
+[ext_resource type="FontFile" uid="uid://nntnisgwljuf" path="res://Vanilla Whale.otf" id="5_ailhr"]
+[ext_resource type="Script" path="res://notifications.gd" id="7_j7xlc"]
+[ext_resource type="AudioStream" uid="uid://chdogd6s1np7g" path="res://cowboy.mp3" id="9_vwjxj"]
+[ext_resource type="AudioStream" uid="uid://c2raci5pwbttp" path="res://shuffle.mp3" id="10_b2fdr"]
+[ext_resource type="AudioStream" uid="uid://byeif5dydo1g6" path="res://card-sounds-35956.mp3" id="10_rrbj7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8y535"]
+bg_color = Color(0.751253, 0.534577, 0.545723, 1)
+
+[sub_resource type="Theme" id="Theme_lo34h"]
+default_font = ExtResource("2_kh1re")
+default_font_size = 40
+Label/colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_8y535")
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0cwsq")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_kyc02")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Resources" type="HBoxContainer" parent="UI/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Draw" type="Label" parent="UI/Control/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+text = "Draw: XX"
+
+[node name="Food" type="Label" parent="UI/Control/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.912289, 0.912289, 0.912289, 1)
+theme_override_font_sizes/font_size = 30
+text = "Food: XX"
+
+[node name="Ammo" type="Label" parent="UI/Control/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Ammo: XX"
+
+[node name="Morale" type="Label" parent="UI/Control/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99, 0.297, 0.47025, 1)
+theme_override_font_sizes/font_size = 32
+text = "Morale: XX"
+
+[node name="Wealth" type="Label" parent="UI/Control/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_font_sizes/font_size = 30
+text = "Wealth: XX"
+
+[node name="Discard" type="Label" parent="UI/Control/VBoxContainer/Resources"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+text = "Discard: XX"
+
+[node name="Cards" type="HBoxContainer" parent="UI/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardA" type="TextureButton" parent="UI/Control/VBoxContainer/Cards"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_bieys")
+texture_hover = ExtResource("2_22cfx")
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/VBoxContainer/Cards/CardA"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.145
+anchor_top = 0.016
+anchor_right = 0.83
+anchor_bottom = 0.968
+offset_top = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ailhr")
+theme_override_font_sizes/font_size = 55
+text = "Example Title"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Type" type="Label" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+layout_mode = 2
+text = "Example Type"
+horizontal_alignment = 1
+
+[node name="Persistence" type="Label" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+layout_mode = 2
+text = "Example Type"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_wadif")
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Description Description Lorem Ipsum Lagorian Prince
+Description Description Lorem Ipsum Lagorian Prince
+Description Description Lorem Ipsum Lagorian Prince
+Description Description Lorem Ipsum Lagorian PrinceDescription Description Lorem Ipsum Lagorian Prince
+
+"
+autowrap_mode = 2
+
+[node name="GoodText" type="Label" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+layout_mode = 2
+text = "SDFKSAJDFLKASJDLASKDJLAKSDJLASKDJALKSDJALKDS"
+
+[node name="BadText" type="Label" parent="UI/Control/VBoxContainer/Cards/CardA/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="CardB" type="TextureButton" parent="UI/Control/VBoxContainer/Cards"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_bieys")
+texture_hover = ExtResource("2_22cfx")
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/VBoxContainer/Cards/CardB"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.066
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ailhr")
+theme_override_font_sizes/font_size = 55
+text = "Example Title"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Type" type="Label" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+layout_mode = 2
+text = "Example Type"
+horizontal_alignment = 1
+
+[node name="Persistence" type="Label" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+layout_mode = 2
+text = "Example Type"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_wadif")
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+custom_minimum_size = Vector2(45, 20)
+layout_mode = 2
+text = "Description Description Lorem Ipsum Lagorian Prince
+Description Description Lorem Ipsum Lagorian Prince
+Description Description Lorem Ipsum Lagorian Prince
+Description Description Lorem Ipsum Lagorian PrinceDescription Description Lorem Ipsum Lagorian Prince
+
+"
+autowrap_mode = 2
+
+[node name="GoodText" type="Label" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+layout_mode = 2
+text = "SDFKSAJDFLKASJDLASKDJLAKSDJLASKDJALKSDJALKDS"
+
+[node name="BadText" type="Label" parent="UI/Control/VBoxContainer/Cards/CardB/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Status" type="Label" parent="UI/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+
+[node name="ChoicePanel" type="Panel" parent="UI/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="UI/Control/ChoicePanel"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/ChoicePanel/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Control/ChoicePanel/Margin/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NotificationSystem" type="CanvasLayer" parent="."]
+script = ExtResource("7_j7xlc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NotificationSystem"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lo34h")
+alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vwjxj")
+volume_db = -8.0
+parameters/looping = false
+
+[node name="Shuffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_b2fdr")
+volume_db = 7.0
+
+[node name="Deal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_rrbj7")
+volume_db = -9.1
+
+[connection signal="focus_entered" from="UI/Control/VBoxContainer/Cards/CardA" to="." method="_on_card_a_mouse_entered"]
+[connection signal="focus_exited" from="UI/Control/VBoxContainer/Cards/CardA" to="." method="_on_card_a_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Control/VBoxContainer/Cards/CardA" to="." method="_on_card_a_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Control/VBoxContainer/Cards/CardA" to="." method="_on_card_a_mouse_exited"]
+[connection signal="pressed" from="UI/Control/VBoxContainer/Cards/CardA" to="." method="_on_card_a_pressed"]
+[connection signal="focus_entered" from="UI/Control/VBoxContainer/Cards/CardB" to="." method="_on_card_b_mouse_entered"]
+[connection signal="focus_exited" from="UI/Control/VBoxContainer/Cards/CardB" to="." method="_on_card_b_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Control/VBoxContainer/Cards/CardB" to="." method="_on_card_b_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Control/VBoxContainer/Cards/CardB" to="." method="_on_card_b_mouse_exited"]
+[connection signal="pressed" from="UI/Control/VBoxContainer/Cards/CardB" to="." method="_on_card_b_pressed"]

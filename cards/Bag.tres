@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://ca87lhjng7dhu"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_pf105"]
+[ext_resource type="Texture2D" uid="uid://cu3xm4jep32h5" path="res://cards/Bag.png" id="2_caic7"]
+[ext_resource type="Script" path="res://card.gd" id="2_lrqkw"]
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_pf105")
+name = "wealth"
+value = 8
+
+[resource]
+script = ExtResource("2_lrqkw")
+title = "Bag of Gold"
+description = "You find a Bag of Gold hidden by a bush!"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_pf105")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_pf105")]([])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_caic7")
+removes_self = true

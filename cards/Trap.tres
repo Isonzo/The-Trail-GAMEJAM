@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://m7u17x6odd3y"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_ca1f4"]
+[ext_resource type="Script" path="res://card.gd" id="2_5p416"]
+[ext_resource type="Texture2D" uid="uid://cbjmnoc65tgmx" path="res://cards/trap.png" id="2_q047u"]
+
+[sub_resource type="Resource" id="Resource_0iva0"]
+script = ExtResource("1_ca1f4")
+name = "morale"
+value = 1
+
+[sub_resource type="Resource" id="Resource_qbjym"]
+script = ExtResource("1_ca1f4")
+name = "wealth"
+value = -1
+
+[sub_resource type="Resource" id="Resource_eerhm"]
+script = ExtResource("1_ca1f4")
+name = "ammo"
+value = -1
+
+[resource]
+script = ExtResource("2_5p416")
+title = "Hidden Trap"
+description = "Preparedness against unseen dangers"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_ca1f4")]([SubResource("Resource_0iva0"), SubResource("Resource_qbjym"), SubResource("Resource_eerhm")])
+bad_effect_params = Array[ExtResource("1_ca1f4")]([])
+special_effect = "fight_immunity"
+special_desc = "Become immune to the next skipped fight card"
+image = ExtResource("2_q047u")
+removes_self = false

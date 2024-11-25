@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://db7kp781eug24"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_yi44f"]
+[ext_resource type="Script" path="res://card.gd" id="2_lsi4y"]
+[ext_resource type="Texture2D" uid="uid://d32r00g6bj2fo" path="res://cards/fortune.png" id="2_mqx4p"]
+
+[sub_resource type="Resource" id="Resource_egg07"]
+script = ExtResource("1_yi44f")
+name = "wealth"
+value = -2
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_yi44f")
+name = "wealth"
+value = -3
+
+[resource]
+script = ExtResource("2_lsi4y")
+title = "Fortune Teller"
+description = "Sometimes, knowing is enough"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_yi44f")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_yi44f")]([SubResource("Resource_egg07")])
+special_effect = "see_and_discard"
+special_desc = "See the next 3 cards on top of the draw pile, discard 1"
+image = ExtResource("2_mqx4p")
+removes_self = false

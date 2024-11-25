@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Card" load_steps=10 format=3 uid="uid://ubfn0h4nu1wp"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_gyqnk"]
+[ext_resource type="Texture2D" uid="uid://dsqhl1hl6oep3" path="res://cards/raid.png" id="2_cbfkq"]
+[ext_resource type="Script" path="res://card.gd" id="2_lhey0"]
+
+[sub_resource type="Resource" id="Resource_ui3t5"]
+script = ExtResource("1_gyqnk")
+name = "morale"
+value = 1
+
+[sub_resource type="Resource" id="Resource_dvp7t"]
+script = ExtResource("1_gyqnk")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_gyqnk")
+name = "ammo"
+value = -3
+
+[sub_resource type="Resource" id="Resource_aqnh5"]
+script = ExtResource("1_gyqnk")
+name = "food"
+value = 5
+
+[sub_resource type="Resource" id="Resource_nrg8o"]
+script = ExtResource("1_gyqnk")
+name = "morale"
+value = -2
+
+[sub_resource type="Resource" id="Resource_tcwvn"]
+script = ExtResource("1_gyqnk")
+name = "wealth"
+value = 5
+
+[resource]
+script = ExtResource("2_lhey0")
+title = "Raid"
+description = "I don't think they deserved it."
+type = "Fight"
+good_effect_params = Array[ExtResource("1_gyqnk")]([SubResource("Resource_28xcc"), SubResource("Resource_aqnh5"), SubResource("Resource_nrg8o"), SubResource("Resource_tcwvn")])
+bad_effect_params = Array[ExtResource("1_gyqnk")]([SubResource("Resource_ui3t5"), SubResource("Resource_dvp7t")])
+special_effect = "immunity"
+special_desc = "Ignore the skip effects of two cards"
+image = ExtResource("2_cbfkq")
+removes_self = false

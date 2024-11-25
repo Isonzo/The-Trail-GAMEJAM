@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://6bchht86phoh"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_kupd2"]
+[ext_resource type="Script" path="res://card.gd" id="2_of5wv"]
+[ext_resource type="Texture2D" uid="uid://b04ii6u3qhwwo" path="res://cards/lastStand.png" id="2_ut8be"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_kupd2")
+name = "ammo"
+value = -2
+
+[resource]
+script = ExtResource("2_of5wv")
+title = "Last Stand"
+description = "The Adrenaline... What a rush! Will the end be nigh?"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_kupd2")]([])
+bad_effect_params = Array[ExtResource("1_kupd2")]([SubResource("Resource_jw4fg")])
+special_effect = "last_stand"
+special_desc = "For every point below 3 morale when played, gain 1 attack immunity. 2 morale, and lose 1 ammo"
+image = ExtResource("2_ut8be")
+removes_self = false

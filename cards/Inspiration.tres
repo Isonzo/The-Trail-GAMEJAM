@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://x3fnew7j4tpl"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_2g1id"]
+[ext_resource type="Script" path="res://card.gd" id="2_4wwlg"]
+[ext_resource type="Texture2D" uid="uid://dlty85gpe4to6" path="res://cards/inspiration.png" id="2_k5g3a"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_2g1id")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_2g1id")
+name = "morale"
+value = 2
+
+[resource]
+script = ExtResource("2_4wwlg")
+title = "Inspiration"
+description = "You feel great!"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_2g1id")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_2g1id")]([SubResource("Resource_jw4fg")])
+special_effect = "inspiration"
+special_desc = "Gain permanent +1 speed if morale > 10 when played"
+image = ExtResource("2_k5g3a")
+removes_self = true

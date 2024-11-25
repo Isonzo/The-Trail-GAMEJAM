@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Card" load_steps=10 format=3 uid="uid://dudwwcx7hk15o"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_2j4ma"]
+[ext_resource type="Texture2D" uid="uid://nk5oux24ta41" path="res://cards/march.png" id="2_mtyif"]
+[ext_resource type="Script" path="res://card.gd" id="2_u0aec"]
+
+[sub_resource type="Resource" id="Resource_hgolv"]
+script = ExtResource("1_2j4ma")
+name = "food"
+value = -4
+
+[sub_resource type="Resource" id="Resource_oho57"]
+script = ExtResource("1_2j4ma")
+name = "morale"
+value = -2
+
+[sub_resource type="Resource" id="Resource_ppfgu"]
+script = ExtResource("1_2j4ma")
+name = "distance"
+value = 6
+
+[sub_resource type="Resource" id="Resource_3vci7"]
+script = ExtResource("1_2j4ma")
+name = "food"
+value = -4
+
+[sub_resource type="Resource" id="Resource_0cosn"]
+script = ExtResource("1_2j4ma")
+name = "morale"
+value = -2
+
+[sub_resource type="Resource" id="Resource_6fho4"]
+script = ExtResource("1_2j4ma")
+name = "distance"
+value = 10
+
+[resource]
+script = ExtResource("2_u0aec")
+title = "Forced March"
+description = "So... Tired... No... Rest..."
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_2j4ma")]([SubResource("Resource_3vci7"), SubResource("Resource_0cosn"), SubResource("Resource_6fho4")])
+bad_effect_params = Array[ExtResource("1_2j4ma")]([SubResource("Resource_hgolv"), SubResource("Resource_oho57"), SubResource("Resource_ppfgu")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_mtyif")
+removes_self = false

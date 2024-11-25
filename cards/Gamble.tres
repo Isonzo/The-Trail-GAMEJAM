@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://dyitmiwinpbr5"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_1ic41"]
+[ext_resource type="Script" path="res://card.gd" id="2_1wyf7"]
+[ext_resource type="Texture2D" uid="uid://b0e2jwxhmkrid" path="res://cards/gambling.png" id="2_b2rfj"]
+
+[sub_resource type="Resource" id="Resource_cby8w"]
+script = ExtResource("1_1ic41")
+name = "wealth"
+value = -2
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_1ic41")
+name = "card"
+value = 1
+
+[sub_resource type="Resource" id="Resource_hbwkb"]
+script = ExtResource("1_1ic41")
+name = "morale"
+value = 3
+
+[resource]
+script = ExtResource("2_1wyf7")
+title = "Gambling"
+description = "Might as well roll the dice!"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_1ic41")]([SubResource("Resource_28xcc"), SubResource("Resource_hbwkb")])
+bad_effect_params = Array[ExtResource("1_1ic41")]([SubResource("Resource_cby8w")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_b2rfj")
+removes_self = false

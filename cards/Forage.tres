@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://baw4o5a75bdrx"]
+
+[ext_resource type="Script" path="res://card.gd" id="1_nctht"]
+[ext_resource type="Script" path="res://effect_param.gd" id="1_warwx"]
+[ext_resource type="Texture2D" uid="uid://d3irhpcn3ii6h" path="res://cards/Forage.png" id="2_p5cgh"]
+
+[sub_resource type="Resource" id="Resource_punj0"]
+script = ExtResource("1_warwx")
+name = "food"
+value = 2
+
+[sub_resource type="Resource" id="Resource_nmoua"]
+script = ExtResource("1_warwx")
+name = "ammo"
+value = 1
+
+[resource]
+script = ExtResource("1_nctht")
+title = "Forage"
+description = "Forage for food and supplies"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_warwx")]([SubResource("Resource_punj0"), SubResource("Resource_nmoua")])
+bad_effect_params = Array[ExtResource("1_warwx")]([])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_p5cgh")
+removes_self = false

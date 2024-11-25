@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dum61h5srf8f1"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_0beft"]
+[ext_resource type="Script" path="res://card.gd" id="2_fhc5a"]
+[ext_resource type="Texture2D" uid="uid://8h3bjenltccq" path="res://cards/campfire.png" id="2_vohqn"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_0beft")
+name = "food"
+value = -2
+
+[sub_resource type="Resource" id="Resource_aqnh5"]
+script = ExtResource("1_0beft")
+name = "morale"
+value = 3
+
+[resource]
+script = ExtResource("2_fhc5a")
+title = "Campfire Stories"
+description = "You don't actually have anyone"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_0beft")]([SubResource("Resource_aqnh5")])
+bad_effect_params = Array[ExtResource("1_0beft")]([SubResource("Resource_jw4fg")])
+special_effect = ""
+special_desc = "If Person in need has been played previously, effects double"
+image = ExtResource("2_vohqn")
+removes_self = false

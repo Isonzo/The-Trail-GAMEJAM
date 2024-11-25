@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dga7absynbhk3"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_rumfj"]
+[ext_resource type="Script" path="res://card.gd" id="2_cryqe"]
+[ext_resource type="Texture2D" uid="uid://cfhysotgq8dg3" path="res://cards/storm.png" id="2_y0ph4"]
+
+[sub_resource type="Resource" id="Resource_hgolv"]
+script = ExtResource("1_rumfj")
+name = "morale"
+value = -1
+
+[sub_resource type="Resource" id="Resource_br1wo"]
+script = ExtResource("1_rumfj")
+name = "distance"
+value = -2
+
+[resource]
+script = ExtResource("2_cryqe")
+title = "Storm"
+description = "The heavy rain slows you down"
+type = "Survival"
+good_effect_params = Array[ExtResource("1_rumfj")]([])
+bad_effect_params = Array[ExtResource("1_rumfj")]([SubResource("Resource_hgolv"), SubResource("Resource_br1wo")])
+special_effect = ""
+special_desc = "If skipped, adds another copy of this card to your discard pile"
+image = ExtResource("2_y0ph4")
+removes_self = false

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Card" load_steps=7 format=3 uid="uid://dis6g2bk1y60t"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_dwed7"]
+[ext_resource type="Script" path="res://card.gd" id="1_ewpen"]
+[ext_resource type="Texture2D" uid="uid://dmrpf5bi6n17s" path="res://cards/Ambush.png" id="2_pnnyh"]
+
+[sub_resource type="Resource" id="Resource_jw4fg"]
+script = ExtResource("1_dwed7")
+name = "wealth"
+value = -4
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_dwed7")
+name = "ammo"
+value = -2
+
+[sub_resource type="Resource" id="Resource_aqnh5"]
+script = ExtResource("1_dwed7")
+name = "morale"
+value = 4
+
+[resource]
+script = ExtResource("1_ewpen")
+title = "Ambush"
+description = "Looks like they want money"
+type = "Fight"
+good_effect_params = Array[ExtResource("1_dwed7")]([SubResource("Resource_28xcc"), SubResource("Resource_aqnh5")])
+bad_effect_params = Array[ExtResource("1_dwed7")]([SubResource("Resource_jw4fg")])
+special_effect = ""
+special_desc = ""
+image = ExtResource("2_pnnyh")
+removes_self = false

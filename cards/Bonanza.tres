@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://c7wsgelyulrly"]
+
+[ext_resource type="Script" path="res://effect_param.gd" id="1_4wdli"]
+[ext_resource type="Script" path="res://card.gd" id="2_mtrla"]
+[ext_resource type="Texture2D" uid="uid://chnpuesy2b87u" path="res://cards/Bonanza.png" id="2_wc4dq"]
+
+[sub_resource type="Resource" id="Resource_1vy7t"]
+script = ExtResource("1_4wdli")
+name = "wealth"
+value = -2
+
+[sub_resource type="Resource" id="Resource_28xcc"]
+script = ExtResource("1_4wdli")
+name = "wealth"
+value = 3
+
+[resource]
+script = ExtResource("2_mtrla")
+title = "Barter Bonanza"
+description = "Leveraging all your connections!"
+type = "Interaction"
+good_effect_params = Array[ExtResource("1_4wdli")]([SubResource("Resource_28xcc")])
+bad_effect_params = Array[ExtResource("1_4wdli")]([SubResource("Resource_1vy7t")])
+special_effect = "bonanza"
+special_desc = "+1  wealth for each interaction card in discard pile, -1 ammo for each survival card in the discard pile"
+image = ExtResource("2_wc4dq")
+removes_self = false
